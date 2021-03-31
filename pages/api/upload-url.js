@@ -8,7 +8,7 @@ export default async function handler(req, res) {
     signatureVersion: 'v4',
   }); 
 
-  const ep = new aws.Endpoint('s3.wasabisys.com');
+  const ep = new aws.Endpoint('s3.us-west-1.wasabisys.com');
   const s3 = new aws.S3({endpoint: ep});
   const post = await s3.createPresignedPost({
     Bucket: process.env.BUCKET_NAME,
